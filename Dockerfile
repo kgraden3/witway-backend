@@ -11,10 +11,10 @@ ENV PYTHONUNBUFFERED 1
 # create root directory for our project in the container
 RUN mkdir /witway_backend
 
-# Set the working directory to /music_service
+# Set the working directory to /witway_backend
 WORKDIR /witway_backend
 
-# Copy the current directory contents into the container at /music_service
+# Copy the current directory contents into the container at /witway_backend
 ADD . /witway_backend/
 
 # COPY startup script into known file location in container
@@ -30,7 +30,7 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 8000
 
 # CMD specifcies the command to execute to start the server running.
-CMD ["/start.sh"]
-#CMD ["python3", "witway_backend/manage.py", "runserver", "0.0.0.0:8000"]
+#CMD ["/start.sh"]
+CMD ["python3", "witway_backend/manage.py", "runserver", "0.0.0.0:8000"]
 
 # done!
