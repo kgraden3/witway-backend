@@ -1,18 +1,9 @@
-from django.contrib.auth.models import User, Group
-from rest_framework import permissions
-from rest_framework.generics import CreateAPIView
-from django.contrib.auth import get_user_model  # If used custom user model
+
 from rest_framework import viewsets
 
-from .serializers import UserSerializer
-
-
-# class CreateUserView(CreateAPIView):
-#     model = get_user_model()
-#     permission_classes = [
-#         permissions.AllowAny  # Or anon users can't register
-#     ]
-#     serializer_class = UserSerializer
+from .serializers import *
+from .models import UserDetails, Stake, Account
+from django.contrib.auth.models import User
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,3 +11,27 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+
+
+class UserDetailsViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows user details to be viewed or edited.
+    """
+    queryset = UserDetails.objects.all()
+    serializer_class = UserDetailsSerializer
+
+
+class StakeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows user details to be viewed or edited.
+    """
+    queryset = Stake.objects.all()
+    serializer_class = StakeSerializer
+
+
+class AccountViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows user details to be viewed or edited.
+    """
+    queryset = Account.objects.all()
+    serializer_class = AccountSerializer

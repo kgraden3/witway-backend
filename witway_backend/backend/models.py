@@ -8,7 +8,7 @@ class UserDetails(models.Model):
     gender = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
     occupation = models.CharField(max_length=100)
-    use = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
 class Stake(models.Model):

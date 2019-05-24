@@ -1,33 +1,23 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model # If used custom user model
-
-UserModel = get_user_model()
+from .models import *
 
 
-# class UserSerializer(serializers.ModelSerializer):
-#
-#     password = serializers.CharField(write_only=True)
-#
-#     def create(self, validated_data):
-#
-#         user = UserModel.objects.create(
-#             username=validated_data['username']
-#         )
-#         user.set_password(validated_data['password'])
-#         user.save()
-#
-#         return user
-#
-#     class Meta:
-#         model = UserModel
-#         # Tuple of serialized model fields (see link [2])
-#         fields = ( "id", "username", "password", )
-
-from django.contrib.auth.models import User
-from rest_framework import serializers
-
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('email', 'username', 'url')
+
+class UserDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserDetails
+        fields = ('gender','address','occupation','user')
+
+class StakeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stake
+        fields = ('creator','invitee','donationName','amountStaked')
+
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ('owner','accountHex')
