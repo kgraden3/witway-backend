@@ -30,7 +30,7 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 8000
 
 # CMD specifcies the command to execute to start the server running.
-#CMD ["/start.sh"]
-CMD ["python3", "witway_backend/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/start.sh"]
+#CMD ["python3", "witway_backend/manage.py", "runserver", "0.0.0.0:8000"]
 
 # done!

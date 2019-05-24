@@ -2,8 +2,7 @@
 from rest_framework import viewsets
 
 from .serializers import *
-from .models import UserDetails, Stake, Account
-from django.contrib.auth.models import User
+from .models import UserDetail, Stake, Account
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -13,12 +12,12 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-class UserDetailsViewSet(viewsets.ModelViewSet):
+class UserDetailViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows user details to be viewed or edited.
     """
-    queryset = UserDetails.objects.all()
-    serializer_class = UserDetailsSerializer
+    queryset = UserDetail.objects.all()
+    serializer_class = UserDetailSerializer
 
 
 class StakeViewSet(viewsets.ModelViewSet):

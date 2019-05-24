@@ -5,19 +5,22 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'username', 'url')
+        fields = ('email', 'username', 'url', 'id')
 
-class UserDetailsSerializer(serializers.ModelSerializer):
+
+class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserDetails
-        fields = ('gender','address','occupation','user')
+        model = UserDetail
+        fields = ('gender', 'address', 'occupation', 'user', 'id')
+
 
 class StakeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stake
-        fields = ('creator','invitee','donationName','amountStaked')
+        fields = ('creator', 'invitee', 'donationName', 'amountStaked', 'meetingDate', 'id')
+
 
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ('owner','accountHex')
+        fields = ('owner', 'accountHex', 'id')

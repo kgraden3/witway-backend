@@ -70,6 +70,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'witway_backend.wsgi.application'
 
+AUTH_USER_MODEL = 'backend.User'
+
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 

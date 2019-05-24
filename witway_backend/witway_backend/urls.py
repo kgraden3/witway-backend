@@ -20,7 +20,7 @@ from backend import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'user_details', views.UserDetailsViewSet)
+router.register(r'user_details', views.UserDetailViewSet)
 router.register(r'stakes', views.StakeViewSet)
 router.register(r'accounts', views.AccountViewSet)
 
