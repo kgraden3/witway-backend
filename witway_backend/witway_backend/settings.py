@@ -2,7 +2,7 @@
 import os
 from django.core.exceptions import ImproperlyConfigured
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Handling Key Import Errors
 def get_env_variable(var_name):

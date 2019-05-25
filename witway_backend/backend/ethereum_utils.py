@@ -17,7 +17,7 @@ class EthereumUtils:
 
     def decrypt_keystore(self):
         keystore = self.get_keystore()
-        private_key = self.w3.eth.account.decrypt(keystore, 'hackathon')
+        private_key = self.w3.eth.account.decrypt(keystore, settings.WITWAY_ADDRESS_SECRET)
         return private_key
 
     def get_gas_estimate(self, transaction):
