@@ -64,9 +64,12 @@ on your browser will take you to a list view of the given model. Hitting the `Op
 Following that link in your browser will lead you to a detail endpoint for that specific model with the same option button, and a delete button for good measure. 
 
 The rule of thumb is:
-*list views will return a list with a GET, and will create with a POST
-*detail views will return an instance with a GET, and will modify with either a PUT or PATCH.
-*All fields are required except for `url` and `id` which will be generated on the backend. 
+
+-list views will return a list with a GET, and will create with a POST
+
+-detail views will return an instance with a GET, and will modify with either a PUT or PATCH.
+
+-All fields are required except for `url` and `id` which will be generated on the backend. 
 
 
 
