@@ -50,3 +50,6 @@ class EthereumUtils:
 
     def get_signed_transaction(self, transaction):
         return self.w3.eth.account.signTransaction(transaction, self.private_key)
+
+    def send_raw_transaction(self, raw_transaction):
+        return self.w3.eth.sendRawTransaction(raw_transaction)
