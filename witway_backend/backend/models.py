@@ -20,6 +20,7 @@ class Stake(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
     invitee = models.ForeignKey(User, on_delete=models.CASCADE, related_name="invitee")
     donationName = models.CharField(max_length=100)
+    donationAccount = models.CharField(max_length=100)
     amountStaked = models.DecimalField(decimal_places=6, max_digits=10)
     meetingDate = models.DateTimeField()
 
