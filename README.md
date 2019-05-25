@@ -43,8 +43,13 @@ Starting Gunicorn.
 [2019-05-25 00:06:55 +0000] [11] [INFO] Booting worker with pid: 11
 [2019-05-25 00:06:55 +0000] [12] [INFO] Booting worker with pid: 12
 ```
-This means the server is running successfully on your local machine's localhost on port 8000. You can reach this by hitting 
-http://127.0.0.1:8000 or http//:localhost:8000.
+This means the server is running successfully on your local machine's localhost on port 8000. You can reach this by hitting
+
+http://127.0.0.1:8000
+
+or 
+
+http://localhost:8000
 
 5. Now the fun part. Hitting the above address with no path will result in 
 ```HTTP 200 OK
