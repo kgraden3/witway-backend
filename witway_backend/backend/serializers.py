@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserDetail
-        fields = ('gender', 'address', 'occupation', 'user', 'url', 'id')
+        fields = ('gender', 'companions', 'address', 'occupation', 'user', 'url', 'id')
 
 
 class StakeSerializer(serializers.ModelSerializer):

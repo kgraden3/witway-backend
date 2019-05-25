@@ -5,7 +5,7 @@ from django.db import models
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    companions = models.ForeignKey('UserDetail', on_delete=models.PROTECT, related_name='companions')
+    companions = models.ForeignKey('UserDetail', on_delete=models.PROTECT, related_name='companions', null=True)
 
 
 class UserDetail(models.Model):
