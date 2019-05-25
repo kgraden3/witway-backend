@@ -26,14 +26,27 @@ class EthereumUtils:
     def get_gas_price(self):
         return self.w3.eth.gasPrice
 
+    def get_nonce(self):
+        return self.w3.eth.getTransactionCount(self.checksum_addr)
+
     def get_account(self):
         return self.account
 
-    def create_unsigned_transaction(self, to, value):
-        return {
+    def create_unsigned_transaction(self, to, value, nonce, gas_price=None, gas=None):
+        transaction = {
             'to': self.w3.toChecksumAddress(to),
             'from': self.checksum_addr,
-            'value': value
+            'value': value,
+            'nonce': nonce
         }
 
-    # def
+        if gas_price:
+            transaction['gasPrice'] = gas_price
+
+        if gas:
+            transaction['gas'] = gas
+
+        return transaction
+
+    def get_signed_transaction(self, transaction):
+        return self.w3.eth.account.signTransaction(transaction, self.private_key)
