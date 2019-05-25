@@ -22,7 +22,7 @@ class UserDetailViewSet(viewsets.ModelViewSet):
 
 class StakeViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows user details to be viewed or edited.
+    API endpoint that allows stakes to be viewed or edited.
     """
     queryset = Stake.objects.all()
     serializer_class = StakeSerializer
@@ -30,7 +30,7 @@ class StakeViewSet(viewsets.ModelViewSet):
 
 class AccountViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows user details to be viewed or edited.
+    API endpoint that allows accounts to be viewed or edited.
     """
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
