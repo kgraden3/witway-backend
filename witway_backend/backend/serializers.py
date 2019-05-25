@@ -11,16 +11,16 @@ class UserSerializer(serializers.ModelSerializer):
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserDetail
-        fields = ('gender', 'address', 'occupation', 'user', 'id')
+        fields = ('gender', 'address', 'occupation', 'user', 'url', 'id')
 
 
 class StakeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stake
-        fields = ('creator', 'invitee', 'donationName', 'amountStaked', 'meetingDate', 'id')
+        fields = ('creator', 'invitee', 'donationName', 'amountStaked', 'meetingDate', 'url', 'id')
 
 
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ('owner', 'accountHex', 'id')
+        fields = ('owner', 'accountHex', 'url', 'id')
