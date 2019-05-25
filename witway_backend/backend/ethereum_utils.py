@@ -21,14 +21,19 @@ class EthereumUtils:
         return private_key
 
     def get_gas_estimate(self, transaction):
-        self.w3.eth.estimateGas(transaction)
+        return self.w3.eth.estimateGas(transaction)
+
+    def get_gas_price(self):
+        return self.w3.eth.gasPrice
 
     def get_account(self):
         return self.account
 
-    def create_transaction(self, to, value):
+    def create_unsigned_transaction(self, to, value):
         return {
             'to': self.w3.toChecksumAddress(to),
             'from': self.checksum_addr,
             'value': value
         }
+
+    def

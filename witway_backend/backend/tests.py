@@ -19,6 +19,17 @@ class EthereumUtilsTestCase(SimpleTestCase):
         private_key = self.utils.decrypt_keystore()
         print(private_key)
 
-    def test_estimate_gas_cost(self):
-        transaction = self.utils.create_transaction("0x93F916f1cc5F074BfF9E63c4dB7c0DdBEBD8C263", 1)
-        self.utils.get_gas_estimate(transaction)
+    def test_is_connected(self):
+        self.assertTrue(self.utils.w3.isConnected())
+
+    def test_estimate_gas(self):
+        transaction = self.utils.create_unsigned_transaction("0xa2e1d85c8ac2dff1c91a862552dbc4da6fa4d8b2", 1)
+        estimate = self.utils.get_gas_estimate(transaction)
+        print(estimate)
+        self.assertIsNotNone(estimate)
+
+    def test_gas_price(self):
+        price = self.utils.get_gas_price()
+        print(price)
+        self.assertIsNotNone(price)
+

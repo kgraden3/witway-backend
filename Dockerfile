@@ -8,6 +8,8 @@ FROM python:3.7-slim
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED 1
 
+ENV WITWAY_ADDRESS_SECRET 'hackathon'
+
 # create root directory for our project in the container
 RUN mkdir /witway_backend
 
