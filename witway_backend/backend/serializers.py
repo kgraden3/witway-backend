@@ -17,7 +17,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 class StakeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stake
-        fields = ('creator', 'invitee', 'donationName', 'amountStaked', 'meetingDate', 'url', 'id')
+        fields = ('creator', 'invitee', 'donationName', 'donationAccount', 'amountStaked', 'meetingDate', 'url', 'id')
 
 
 class AccountSerializer(serializers.ModelSerializer):
