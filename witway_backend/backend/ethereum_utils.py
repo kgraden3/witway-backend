@@ -36,4 +36,4 @@ class EthereumUtils:
             'value': value
         }
 
-    def
+    # def

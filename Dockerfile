@@ -1,7 +1,7 @@
 # Dockerfile
 
 # FROM directive instructing base image to build upon
-FROM python:3.7-slim
+FROM python:3.7
 
 
 # The enviroment variable ensures that the python output is set straight
@@ -9,6 +9,8 @@ FROM python:3.7-slim
 ENV PYTHONUNBUFFERED 1
 
 ENV WITWAY_ADDRESS_SECRET 'hackathon'
+
+ENV SECRET_KEY 's_&#2j6l-@3k_*$0knvh=)i_zd-(_9(5u6*f^7zgh8q1femu(@'
 
 # create root directory for our project in the container
 RUN mkdir /witway_backend
@@ -25,8 +27,11 @@ COPY start.sh /start.sh
 # COPY requirements.txt into known file location in container
 COPY requirements.txt /requirements.txt
 
+
+
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
+
 
 # EXPOSE port 8000 to allow communication to/from server
 EXPOSE 8000
